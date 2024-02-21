@@ -6,6 +6,7 @@ from matplotlib.backends.backend_gtk3agg import (
     FigureCanvasGTK3Agg as FigureCanvas)
 from matplotlib.figure import Figure
 import numpy as np
+import myfibo
 
 
 class Gui(Gtk.Window):
@@ -53,7 +54,10 @@ class Gui(Gtk.Window):
 
     def update_canvas(self, n):
         self.ax.clear()
-        # TODO plot fibo_iterative
+        #plot fibo_iterative
+        x = np.arange(n + 1)
+        y = np.array([myfibo.fibo_itarative(i) for i in range(n +1 )])
+        self.ax.plot(x, y, marker='o', linestyle='-')
         self.canvas.draw()
 
 

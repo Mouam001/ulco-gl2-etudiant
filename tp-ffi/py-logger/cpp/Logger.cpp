@@ -10,11 +10,21 @@ void Logger::addItem(Level l, const std::string & m) {
   _items.emplace_back(l, m);
 }
 
+char showchar(Level l){
+    switch (l)
+    {
+        case Level::Error : return 'E';
+        case Level::Warning : return 'W';
+        case Level::Info : return 'I';
+
+    }
+    return 'U';
+}
 
 std::string Logger::reportByAdded() const {
    std::stringstream ss;
     for (const auto & item : _items) {
-        ss << "[" << static_cast<char>(std::get<0>(item)) << "] " << std::get<1>(item) << std::endl;
+        ss << "[" << showchar(std::get<0>(item)) << "] " << std::get<1>(item) << std::endl;
     }
     return ss.str();
 }
@@ -28,9 +38,10 @@ std::string Logger::reportByLevel() const {
     std::stringstream ss;
     for (const auto & pair : groupedItems) {
         for (const auto & message : pair.second) {
-            ss << "[" << static_cast<char>(pair.first) << "] " << message << std::endl;
+            ss << "[" << showchar(pair.first) << "] " << message << std::endl;
         }
     }
     return ss.str();
 }
+
 

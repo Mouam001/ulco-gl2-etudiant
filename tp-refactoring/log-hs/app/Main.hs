@@ -24,6 +24,14 @@ mycomputeFile v0 = do
     hClose handle
     return v2
 
+mycomputelog ::(String -> IO ()) ->Int-> IO Int
+mycomputelog logger v0 = do
+    logger ("add3 " ++ show v0)
+    let v1 = add3 v0
+    logger ("mul2 " ++ show v1)
+    let v2 = mul2 v1
+    return v2
+
 
 main :: IO ()
 main = do
@@ -34,3 +42,11 @@ main = do
 
     resFic <- mycomputeFile 18
     print resFic
+
+    resLog <- mycomputelog putStrLn 18
+    print resLog
+
+    hF <- openFile "logF.txt" WriteMode
+    resFileF <- mycomputelog (\str ->hPutStrLn hF str) 18
+    hClose hF
+    print resFileF

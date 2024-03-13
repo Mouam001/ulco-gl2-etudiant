@@ -9,15 +9,15 @@ void testBoard(Board & b) {
     ReportFile fic;
     std::cout << b.getTitle() << std::endl;
 
-    b.add("item");
-    b.add("item");
+    b.add("item 1");
+    b.add("item 2");
 
     r.reportStdout(b);
     fic.reportFile(b,"text.txt");
     
 }
 
-void testNumBoard(NumBoard & b) {
+void testNumBoard(NumBoard &b) {
     ReportStdout r;
     ReportFile fic;
 
@@ -34,9 +34,10 @@ void testNumBoard(NumBoard & b) {
 
 int main() {
 
-    Board b1;
+    NumBoard b1;
     NumBoard n1;
-    testBoard(b1);
+
+    testBoard(n1);
     testNumBoard(n1);
     
     

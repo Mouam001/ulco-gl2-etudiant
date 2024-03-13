@@ -10,6 +10,10 @@ class NumBoard : public Board{
          add(numberConvert);
      }
 
+     virtual std::string getTitle() const override {
+            return "NumBoard";
+        }
+
 };
 
 

@@ -37,7 +37,7 @@ int main() {
     NumBoard b1;
     NumBoard n1;
 
-    testBoard(n1);
+    testBoard(b1);
     testNumBoard(n1);
     
     

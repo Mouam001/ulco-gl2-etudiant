@@ -1,9 +1,12 @@
+#pragma once 
 #include "Board.hpp"
+#include "Reportable.hpp"
 
-class ReportFile{
+class ReportFile : public Reportable{
     public:
-    void reportFile(const Board& board,const std::string& fileName) {
-                std::ofstream _ofs(fileName);
+
+    void report(const Board& board) override {
+                std::ofstream _ofs("tmp.txt");
             for (const std::string & board : board.getItems()){
                 _ofs << board << std::endl;
                 _ofs << std::endl;

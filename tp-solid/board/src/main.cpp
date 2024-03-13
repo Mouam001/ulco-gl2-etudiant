@@ -3,24 +3,23 @@
 #include "ReportFile.hpp"
 #include "ReportStdout.hpp"
 #include  "NumBoard.hpp"
+#include "Reportable.hpp"
 
-void testBoard(Board & b) {
-    ReportStdout r;
-    ReportFile fic;
+void testBoard(Board & b,Reportable& r) {
+    
     std::cout << b.getTitle() << std::endl;
 
     b.add("item 1");
     b.add("item 2");
 
-    r.reportStdout(b);
-    fic.reportFile(b,"text.txt");
+    r.report(b);
+    
     
 }
 
-void testNumBoard(NumBoard &b) {
+void testNumBoard(NumBoard &b, Reportable& fic) {
     ReportStdout r;
-    ReportFile fic;
-
+   
     std::cout << b.getTitle() << std::endl;
     b.add_num("item");
     b.add_num("item");
@@ -28,17 +27,20 @@ void testNumBoard(NumBoard &b) {
     b.add_num("item");
     b.add_num("item");
     
-    r.reportStdout(b);
-    fic.reportFile(b,"texttmp.txt");
+    fic.report(b);
+    r.report(b);
+    
 }
 
 int main() {
 
-    NumBoard b1;
+    ReportStdout r;
+    ReportFile f;
+    Board b1;
     NumBoard n1;
 
-    testBoard(b1);
-    testNumBoard(n1);
+    testBoard(b1, r);
+    testNumBoard(n1, f);
     
     
 

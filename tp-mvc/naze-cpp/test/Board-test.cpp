@@ -28,4 +28,7 @@ TEST_CASE( "tryGoLeft, ok" ) {
 }
 
 // TODO
+TEST_CASE( " tryGoRight, ok"){
+    
+}
 

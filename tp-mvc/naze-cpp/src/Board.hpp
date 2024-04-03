@@ -24,7 +24,6 @@ class Board {
         Cell operator()(int i, int j) const;
 
         void tryGoLeft();
-
-        // TODO
+        void tryGoReight();
         
 };

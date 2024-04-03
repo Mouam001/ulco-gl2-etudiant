@@ -11,7 +11,7 @@ class Board{
         std::list<Task> _todo;
         std::list<Task> _done;
         void addTodo(const std::string &desc);
-    //void toDone(int id);
+        void toDone(int id);
 
     private :
     int _nextID; 

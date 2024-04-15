@@ -4,7 +4,8 @@ using namespace std;
 
 int main() {
 
-    cout << "TODO" << endl;
+    Jeu jeu;
+    cout << jeu << endl;
 
     return 0;
 }

@@ -1,3 +1,4 @@
 {
-    "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"
+    "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
+    "cmake.sourceDirectory": "/home/toto/Documents/GL_Pf/ulco-gl2-etudiant/tp-workflow/cpp"
 }

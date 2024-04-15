@@ -5,12 +5,12 @@
 
 class Net {
     private:
-        std::list<WebSocketChannelPtr> _channels;
-        int numero_client = 1;
+        //std::list<WebSocketChannelPtr> _channels;
+       // int numero_client = 1;
 
         // pour gérer les noms de client :
-        // std::list<WebSocketChannelPtr> _pendings;
-        // std::map<WebSocketChannelPtr, std::string> _connections;
+         std::list<WebSocketChannelPtr> _pendings;
+         std::map<WebSocketChannelPtr, std::string> _connections;
 
     public:
         Net() = default;

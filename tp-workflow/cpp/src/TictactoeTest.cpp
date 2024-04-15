@@ -28,3 +28,15 @@ TEST_CASE("affichage du plateau") {
 }
 
 
+TEST_CASE("Jouer un coup valide") {
+    Jeu jeu;
+   jeu.jouer(0, 0);
+    REQUIRE(jeu.getCell(0, 0) == Cell::Rouge);
+}
+
+// TEST_CASE("Jouer un coup invalide") {
+//     Jeu jeu;
+//     jeu.jouer(0, 0);
+//     REQUIRE(jeu.jouer(0, 0) == false);
+// }
+

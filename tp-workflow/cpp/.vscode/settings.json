@@ -1,6 +1,8 @@
 {
     "nixEnvSelector.nixFile": "${workspaceRoot}/default.nix",
     "files.associations": {
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "array": "cpp",
+        "iostream": "cpp"
     }
 }

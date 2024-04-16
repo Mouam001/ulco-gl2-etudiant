@@ -106,3 +106,42 @@ void Jeu::raz() {
     }
 }
 
+
+bool Jeu::playerWin(const Jeu& jeu) {
+    for(int i = 0; i < 3; i++) {
+        // Vérification des lignes
+        if(jeu.getCell(i, 0) != Cell::Vide && jeu.getCell(i, 0) == jeu.getCell(i, 1) && jeu.getCell(i, 1) == jeu.getCell(i, 2)) {
+            return true;
+        }
+
+        // Vérification des colonnes
+        if(jeu.getCell(0, i) != Cell::Vide && jeu.getCell(0, i) == jeu.getCell(1, i) && jeu.getCell(1, i) == jeu.getCell(2, i)) {
+            return true;
+        }
+    }
+
+    // Vérification de la diagonale principale (de gauche à droite)
+    if(jeu.getCell(0, 0) != Cell::Vide && jeu.getCell(0, 0) == jeu.getCell(1, 1) && jeu.getCell(1, 1) == jeu.getCell(2, 2)) {
+        return true;
+    }
+
+    // Vérification de la diagonale secondaire (de droite à gauche)
+    if(jeu.getCell(0, 2) != Cell::Vide && jeu.getCell(0, 2) == jeu.getCell(1, 1) && jeu.getCell(1, 1) == jeu.getCell(2, 0)) {
+        return true;
+    }
+
+    return false;
+}
+
+
+
+bool Jeu::playerEquality(const Jeu& jeu){
+    for(int i = 0; i < _plateau.size(); i++){
+        for(int j = 0; j < _plateau.size(); j++){
+            if(jeu.getCell(i, j) == Cell::Vide){
+                return false;
+            }
+        }
+    }
+    return true;
+}

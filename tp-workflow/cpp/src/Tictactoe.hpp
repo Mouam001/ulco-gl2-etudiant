@@ -37,6 +37,9 @@ class Jeu {
 
         /// \brief permet de reinitialiser le jeu Réinitialise le jeu.
         void raz();
+
+        bool playerWin(const Jeu &jeu);
+        bool playerEquality(const Jeu &jeu);
         Cell getplayer(){
             return _player;
         }

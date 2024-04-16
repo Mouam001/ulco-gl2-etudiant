@@ -34,9 +34,17 @@ TEST_CASE("Jouer un coup valide") {
     REQUIRE(jeu.getCell(0, 0) == Cell::Rouge);
 }
 
-// TEST_CASE("Jouer un coup invalide") {
-//     Jeu jeu;
-//     jeu.jouer(0, 0);
-//     REQUIRE(jeu.jouer(0, 0) == false);
-// }
+TEST_CASE("Jouer gagné") {
+    Jeu jeu;
+    jeu.jouer(0, 0);
+    jeu.jouer(0, 1);
+    jeu.jouer(0, 2);
+    jeu.jouer(1, 0);
+    jeu.jouer(1, 1);
+    jeu.jouer(1, 2);
+    jeu.jouer(2, 0);
+    jeu.jouer(2, 1);
+    jeu.jouer(2, 2);
+    REQUIRE(jeu.playerWin(jeu) == true);
+}
 

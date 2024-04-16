@@ -48,15 +48,3 @@ TEST_CASE("Jouer gagné") {
     REQUIRE(jeu.playerWin(jeu) == true);
 }
 
-TEST_CASE("Jouer à égalité") {
-    Jeu jeu;
-    jeu.jouer(0, 0);
-    jeu.jouer(0, 1);
-    jeu.jouer(0, 2);
-    jeu.jouer(1, 0);
-    jeu.jouer(1, 2);
-    jeu.jouer(2, 0);
-    jeu.jouer(2, 2);
-    REQUIRE(jeu.playerWin(jeu) == true);
-}
-

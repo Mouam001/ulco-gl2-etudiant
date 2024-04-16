@@ -27,10 +27,11 @@ int main() {
             break;
         }
 
-       /* if(jeu.playerEquality(jeu)){
+       if(jeu.playerEquality(jeu)){
             std::cout << " Match null\n";
+            std::cout<<jeu<<std::endl;
             break;
-        }*/
+        }
     }
     // jeu.jouer(0, 1);
     // jeu.jouer(1, 1);

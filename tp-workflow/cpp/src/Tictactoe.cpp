@@ -98,7 +98,6 @@ bool Jeu::jouer(int i, int j) {
 }
 
 void Jeu::raz() {
-    // TODO
     for(int i =0; i < _plateau.size(); i++){
         for(int j = 0; j < _plateau.size(); j++){
             _plateau[i][j] = Cell::Vide;

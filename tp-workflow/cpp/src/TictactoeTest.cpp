@@ -8,7 +8,7 @@ TEST_CASE("test bidon") {
 }
 
 
-    // TODO
+
 TEST_CASE("Initialisation du jeu"){
     Jeu jeu;
     for (int i = 0; i < 3; i ++){

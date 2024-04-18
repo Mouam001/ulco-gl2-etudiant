@@ -38,8 +38,15 @@ class Jeu {
         /// \brief permet de reinitialiser le jeu Réinitialise le jeu.
         void raz();
 
+        /// \brief cette methode permet de verifier s'il ya un jouer gagnant
+        /// \details parcours le plateau et voie s'il y a des joueurs aligné sur la meme ligne et le jeu s'arrete
         bool playerWin(const Jeu &jeu);
+
+        /// \brief cette methode permet de verifier s'il ya egalité 
+        /// \details parcours le plateau et voie s'il y a pas des joueurs aligné sur la meme ligne
         bool playerEquality(const Jeu &jeu);
+
+        /// \addindex permet de recuperer le joueur
         Cell getplayer(){
             return _player;
         }

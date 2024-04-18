@@ -12,12 +12,12 @@ PYBIND11_MODULE(tictactoe, m) {
         ;
 
     /// \brief inclusions des modules c++ vers python du  Status
-    pybind11::enum_<Jeu>(m, "Status")
-        .def("RougeGagne", Status::RougeGagne)
-        .def("VertGagne", Status::VertGagne)
-        .def("RougeJoue", Status::RougeJoue)
-        .def("VertJoue", Status::VertJoue)
-        .def("Egalite", Status::Egalite)
+    pybind11::enum_<Status>(m, "Status")
+        .value("RougeGagne", Status::RougeGagne)
+        .value("VertGagne", Status::VertGagne)
+        .value("RougeJoue", Status::RougeJoue)
+        .value("VertJoue", Status::VertJoue)
+        .value("Egalite", Status::Egalite)
         ;
 
 

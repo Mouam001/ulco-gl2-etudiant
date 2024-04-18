@@ -104,7 +104,7 @@ bool Jeu::jouer(int i, int j) {
 
 void Jeu::raz() {
     for(int i =0; i < _plateau.size(); i++){
-        for(int j = 0; j < _plateau.size(); j++){
+        for(int j = 0; j < 3; j++){
             _plateau[i][j] = Cell::Vide;
         }
     }
@@ -140,7 +140,7 @@ bool Jeu::playerWin(const Jeu& jeu) {
 
 
 bool Jeu::playerEquality(const Jeu& jeu){
-    for(int i = 0; i < _plateau.size(); i++){
+    for(int i = 0; i < 3; i++){
         for(int j = 0; j < _plateau.size(); j++){
             if(jeu.getCell(i, j) == Cell::Vide){
                 return false;

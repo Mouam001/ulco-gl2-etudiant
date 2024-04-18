@@ -1,5 +1,7 @@
 import gi
 import math
+import tictactoe
+
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk
@@ -27,7 +29,7 @@ class Gui(Gtk.Window):
         # label
         self.label = Gtk.Label(label="TODO")
         hbox.pack_start(self.label, True, True, 0)
-        # TODO button1
+        #button1
         # button2
         button2 = Gtk.Button(label="quitter")
         button2.connect("clicked", self.on_button2_clicked)

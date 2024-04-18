@@ -66,14 +66,14 @@ std::ostream & operator<<(std::ostream & os, const Jeu & jeu) {
         for(int j=0; j < 3; j ++){
             switch (jeu.getCell(i, j)){
             
-            case Cell::Rouge : os << "R";
+            case Cell::Rouge : os << " R ";
                 break;
-            case Cell::Vert : os << "V";
+            case Cell::Vert : os << " V ";
                 break;
-            case Cell::Vide : os << "*";
+            case Cell::Vide : os << " * ";
                 break;
             
-            default: os << "*";
+            default: os << " * ";
                     break;
             }
         }
@@ -85,16 +85,21 @@ std::ostream & operator<<(std::ostream & os, const Jeu & jeu) {
 
 
 bool Jeu::jouer(int i, int j) {
+    if(_plateau[i][j] != Cell::Vide){
+        return false;
+    }
+    
     if(_plateau[i][j] == Cell::Vide){
         if(getStatus() == Status::RougeJoue){
             _plateau[i][j] = Cell::Rouge;
-            return true;
+           
         }
-        else if(getStatus()== Status::VertJoue){
+        else if(getStatus() == Status::VertJoue){
             _plateau[i][j] = Cell::Vert;
-            return true;
+          
         }
     }
+    return true;
 }
 
 void Jeu::raz() {

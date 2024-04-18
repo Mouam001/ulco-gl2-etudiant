@@ -12,12 +12,14 @@ enum class Cell { Vide, Rouge, Vert };
 class Jeu {
     private:
         std::array<std::array<Cell, 3>, 3> _plateau;
-        // TODO
+        
+        /// @brief permet de creer le jouer et verifier le status du plateau ? plein:egalité
         Cell _player;
         Status _status;
+        
 
     public:
-        // Constructeur à utiliser.
+        /// \brief contructeur principale du jeu.
         Jeu();
 
         /// \brief Retourne le status du jeu courant (Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue).

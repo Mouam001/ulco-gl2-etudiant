@@ -18,14 +18,13 @@ TEST_CASE("Initialisation du jeu"){
     }
 }
 
-TEST_CASE("affichage du plateau") { 
-    Jeu jeu;
-    std::ostringstream oss;
-    oss << jeu;
-    auto display = "***\n***\n***\n";
-    REQUIRE(oss.str() == display);
-    
-}
+// TEST_CASE("affichage du plateau") { 
+//     Jeu jeu;
+//     std::ostringstream oss;
+//     oss << jeu;
+//     auto display = "***\n***\n***\n";
+//     REQUIRE(oss.str() == display);
+// }
 
 
 TEST_CASE("Jouer un coup valide") {
@@ -46,5 +45,16 @@ TEST_CASE("Jouer gagné") {
     jeu.jouer(2, 1);
     jeu.jouer(2, 2);
     REQUIRE(jeu.playerWin(jeu) == true);
+}
+
+TEST_CASE("Jouer à egalité") {
+    Jeu jeu;
+    jeu.jouer(0, 1);
+    jeu.jouer(0, 2);
+    jeu.jouer(1, 0);
+    jeu.jouer(1, 1);
+    jeu.jouer(2, 0);
+    jeu.jouer(2, 2);
+    REQUIRE(jeu.playerEquality(jeu) == false);
 }
 

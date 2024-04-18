@@ -124,12 +124,12 @@ bool Jeu::playerWin(const Jeu& jeu) {
         }
     }
 
-    // Vérification de la diagonale principale (de gauche à droite)
+    // Vérification de la diagonale principale
     if(jeu.getCell(0, 0) != Cell::Vide && jeu.getCell(0, 0) == jeu.getCell(1, 1) && jeu.getCell(1, 1) == jeu.getCell(2, 2)) {
         return true;
     }
 
-    // Vérification de la diagonale secondaire (de droite à gauche)
+    // Vérification de la diagonale secondaire
     if(jeu.getCell(0, 2) != Cell::Vide && jeu.getCell(0, 2) == jeu.getCell(1, 1) && jeu.getCell(1, 1) == jeu.getCell(2, 0)) {
         return true;
     }

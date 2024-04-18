@@ -31,7 +31,7 @@ int main() {
        }
 
         if(jeu.playerEquality(jeu)){
-             std::cout<< " Match null\n"<<endl;
+             std::cout<< " Match null \n"<<endl;
              std::cout<< jeu<< std::endl;
              break;
        }
